@@ -103,9 +103,6 @@
 [submodule "repo/3p-xmlrpc-epi"]
 	path = repo/3p-xmlrpc-epi
 	url = git@github.com:slviewer-3p/3p-xmlrpc-epi
-[submodule "repo/3p-zlib"]
-	path = repo/3p-zlib
-	url = git@github.com:slviewer-3p/3p-zlib
 [submodule "repo/3p-zlib-ng"]
 	path = repo/3p-zlib-ng
 	url = git@github.com:slviewer-3p/3p-zlib-ng
