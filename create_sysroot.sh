@@ -12,7 +12,6 @@ cd temp
 GLIBC_VERSION=$(python -c 'import platform; print( "-".join(platform.libc_ver()) )')
 
 sh ../packages_add.sh
-autobuild installables remove zlib
 autobuild install
 
 cp $BASE/_results/packages.json sysroot/packages/
