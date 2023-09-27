@@ -25,7 +25,11 @@ jobs:
         
       - name: Install required packages
         if: runner.os == 'Linux'
-        run: sudo apt install -y mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev autoconf libtool  libxext-dev libgstreamer1.0-dev  gawk gtk-doc-tools  gettext gperf libibus-1.0-dev fcitx-libs-dev libudev-dev libunwind-dev libgstreamer-plugins-base1.0-dev libwayland-dev libxkbcommon-dev
+        run: >
+          sudo apt install -y mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev autoconf libtool
+          libxext-dev libgstreamer1.0-dev  gawk gtk-doc-tools  gettext gperf libibus-1.0-dev
+          fcitx-libs-dev libudev-dev libunwind-dev libgstreamer-plugins-base1.0-dev
+          libwayland-dev libxkbcommon-dev libpulse-dev libsndio-dev
 
       - name: Install python-is-python3
         if: runner.os == 'Linux'
