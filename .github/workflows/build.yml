@@ -61,21 +61,21 @@ jobs:
         uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: ${{ runner.os }}-${{runner.arch}}-${{github.ref_name}}-logs
+          name: ${{ matrix.os }}-${{runner.arch}}-${{github.ref_name}}-logs
           retention-days: 2
           path: _buildlog/*
 
       - name: publish sysroot (xz)
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ runner.os }}-${{runner.arch}}-${{github.ref_name}}-sysroot-xz
+          name: ${{ matrix.os }}-${{runner.arch}}-${{github.ref_name}}-sysroot-xz
           retention-days: 2
           path: _results/sysroot*.xz
 
       - name: publish 3p packages
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ runner.os }}-${{runner.arch}}-${{github.ref_name}}-3ps
+          name: ${{ matrix.os }}-${{runner.arch}}-${{github.ref_name}}-3ps
           retention-days: 2
           path: |
             _results/*.bz2
