@@ -10,8 +10,10 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
-
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04]
+    runs-on: ${{matrix.os}}
     steps:
       - name: Run apt update
         if: runner.os == 'Linux'
@@ -25,13 +27,11 @@ jobs:
         if: runner.os == 'Linux'
         run: sudo apt install -y mesa-common-dev libgl1-mesa-dev libglu1-mesa-dev autoconf libtool  libxext-dev libgstreamer1.0-dev  gawk gtk-doc-tools  gettext gperf libibus-1.0-dev fcitx-libs-dev libudev-dev libunwind-15-dev libgstreamer-plugins-base1.0-dev libwayland-dev
 
-      - name: Try install python-is-python3 (not available in 1804)
-        continue-on-error: true
+      - name: Install python-is-python3
         if: runner.os == 'Linux'
         run: sudo apt install -y python-is-python3
 
       - name: Try install python setuptools
-        continue-on-error: true
         if: runner.os == 'Linux'
         run: sudo apt install -y python3-setuptools
 
